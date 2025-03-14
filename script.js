@@ -1,39 +1,48 @@
-// Oxygen Quiz Interaction
-document.getElementById("oxygen-quiz").addEventListener("click", function() {
-  const answer = prompt("What percentage of Earth's atmosphere is oxygen? (Enter a number)");
-  if (answer == 21) {
-    document.getElementById("oxygen-answer").textContent = "Correct! Oxygen makes up about 21% of the atmosphere.";
-  } else {
-    document.getElementById("oxygen-answer").textContent = "Oops! The correct answer is 21%.";
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.from("header", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+  gsap.from("section", { duration: 1, opacity: 0, stagger: 0.3, ease: "power2.inOut" });
+  gsap.from("footer", { duration: 1, y: 50, opacity: 0, ease: "power2.out" });
 });
 
-// Nitrogen Quiz Interaction
-document.getElementById("nitrogen-quiz").addEventListener("click", function() {
-  const answer = prompt("What is the most abundant gas in Earth's atmosphere?");
-  if (answer.toLowerCase() === "nitrogen") {
-    document.getElementById("nitrogen-answer").textContent = "Correct! Nitrogen makes up about 78% of Earth's atmosphere.";
-  } else {
-    document.getElementById("nitrogen-answer").textContent = "Oops! The correct answer is Nitrogen.";
+function openQuiz(topic) {
+  let question, answer;
+  if (topic === "oxygen") {
+    question = "What percentage of Earth's atmosphere is oxygen? (Enter a number)";
+    answer = "21";
+  } else if (topic === "nitrogen") {
+    question = "What is the most abundant gas in Earth's atmosphere?";
+    answer = "nitrogen";
+  } else if (topic === "argon") {
+    question = "Argon is a: \n a) Noble gas \n b) Reactive gas \n c) Flammable gas";
+    answer = "a";
+  } else if (topic === "co2") {
+    question = "Carbon dioxide is a major contributor to: \n a) Global cooling \n b) Greenhouse effect \n c) Ozone layer depletion";
+    answer = "b";
   }
-});
+  
+  const userAnswer = prompt(question);
+  alert(userAnswer.toLowerCase() === answer.toLowerCase() ? "Correct!" : "Oops! Try again.");
+}
 
-// Argon Quiz Interaction
-document.getElementById("argon-quiz").addEventListener("click", function() {
-  const answer = prompt("Argon is a: \n a) Noble gas \n b) Reactive gas \n c) Flammable gas");
-  if (answer.toLowerCase() === "a") {
-    document.getElementById("argon-answer").textContent = "Correct! Argon is a noble gas.";
-  } else {
-    document.getElementById("argon-answer").textContent = "Oops! The correct answer is Noble gas.";
-  }
-});
+// Earth Animation
+const canvas = document.getElementById("earthCanvas");
+const ctx = canvas.getContext("2d");
+let angle = 0;
 
-// Carbon Dioxide Quiz Interaction
-document.getElementById("co2-quiz").addEventListener("click", function() {
-  const answer = prompt("Carbon dioxide is a major contributor to: \n a) Global cooling \n b) Greenhouse effect \n c) Ozone layer depletion");
-  if (answer.toLowerCase() === "b") {
-    document.getElementById("co2-answer").textContent = "Correct! Carbon dioxide is a major contributor to the greenhouse effect.";
-  } else {
-    document.getElementById("co2-answer").textContent = "Oops! The correct answer is Greenhouse effect.";
-  }
-});
+function drawEarth() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.rotate(angle);
+  ctx.beginPath();
+  ctx.arc(0, 0, 100, 0, Math.PI * 2);
+  ctx.fillStyle = "blue";
+  ctx.fill();
+  ctx.restore();
+  angle += 0.01;
+  requestAnimationFrame(drawEarth);
+}
+
+if (canvas) {
+  drawEarth();
+}
