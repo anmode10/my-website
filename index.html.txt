@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Gases Knowledge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Learn About Gases: Oxygen, Nitrogen, Argon, and Carbon Dioxide</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#oxygen">Oxygen</a></li>
+        <li><a href="#nitrogen">Nitrogen</a></li>
+        <li><a href="#argon">Argon</a></li>
+        <li><a href="#carbon-dioxide">Carbon Dioxide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to the World of Gases!</h2>
+    <p>Explore the fascinating properties and uses of different gases like Oxygen, Nitrogen, Argon, and Carbon Dioxide.</p>
+  </section>
+
+  <section id="oxygen">
+    <h2>Oxygen (O₂)</h2>
+    <p>Oxygen is essential for life. It makes up about 21% of Earth's atmosphere.</p>
+    <div class="interactive">
+      <button id="oxygen-quiz">Test Your Knowledge on Oxygen</button>
+      <p id="oxygen-answer"></p>
+    </div>
+  </section>
+
+  <section id="nitrogen">
+    <h2>Nitrogen (N₂)</h2>
+    <p>Nitrogen is the most abundant gas in Earth's atmosphere, making up around 78% of it.</p>
+    <div class="interactive">
+      <button id="nitrogen-quiz">Test Your Knowledge on Nitrogen</button>
+      <p id="nitrogen-answer"></p>
+    </div>
+  </section>
+
+  <section id="argon">
+    <h2>Argon (Ar)</h2>
+    <p>Argon is a noble gas, and it is colorless, odorless, and inert.</p>
+    <div class="interactive">
+      <button id="argon-quiz">Test Your Knowledge on Argon</button>
+      <p id="argon-answer"></p>
+    </div>
+  </section>
+
+  <section id="carbon-dioxide">
+    <h2>Carbon Dioxide (CO₂)</h2>
+    <p>Carbon dioxide is a greenhouse gas and is vital in the process of photosynthesis in plants.</p>
+    <div class="interactive">
+      <button id="co2-quiz">Test Your Knowledge on Carbon Dioxide</button>
+      <p id="co2-answer"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Interactive Gases Knowledge. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
