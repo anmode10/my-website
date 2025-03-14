@@ -78,7 +78,7 @@ button:hover {
 .earth-animation {
   width: 200px;
   height: 200px;
-  background-image: url("earth.gif");
+  background-image: url("https://github.com/anmode10/my-website/blob/main/earth.gif");
   background-size: cover;
   animation: rotateEarth 10s linear infinite;
   margin: auto;
