@@ -2,18 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #4CAF50;
+  background: linear-gradient(to right, #0074D9, #001F3F);
   color: white;
+  padding: 20px;
   text-align: center;
-  padding: 10px 0;
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
@@ -25,49 +25,61 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  font-size: 18px;
 }
 
-section {
+.gas-section {
+  background: white;
   padding: 20px;
   margin: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  background: #0074D9;
   color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 button:hover {
-  background-color: #45a049;
-  transform: scale(1.1);
+  background: #0056b3;
 }
 
-footer {
-  text-align: center;
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
   padding: 20px;
-  background-color: #333;
-  color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
-.quote {
-  font-style: italic;
-  font-size: 1.2em;
-  margin-top: 10px;
+.close {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-/* Earth Animation */
-#earthCanvas {
-  display: block;
-  margin: 0 auto;
-  background: transparent;
-  width: 300px;
-  height: 300px;
+/* Animations */
+@keyframes rotateEarth {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.earth-animation {
+  width: 200px;
+  height: 200px;
+  background-image: url('earth.gif'); /* Replace with an actual rotating Earth GIF */
+  background-size: cover;
+  animation: rotateEarth 10s linear infinite;
+  margin: auto;
 }
