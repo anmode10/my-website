@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Gases Knowledge</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
   <header>
@@ -24,12 +23,16 @@
   <section id="home">
     <h2>Welcome to the World of Gases!</h2>
     <p>Explore the fascinating properties and uses of different gases like Oxygen, Nitrogen, Argon, and Carbon Dioxide.</p>
-    <canvas id="earthCanvas"></canvas>
+    <div class="earth-animation">
+      <img src="earth.gif" alt="Rotating Earth">
+    </div>
   </section>
 
   <section id="oxygen" class="gas-section">
     <h2>Oxygen (O₂)</h2>
-    <p>Oxygen is essential for life. It makes up about 21% of Earth's atmosphere.</p>
+    <p><strong>Atomic Number:</strong> 8 | <strong>Symbol:</strong> O | <strong>Type:</strong> Non-metal | <strong>Molecular Weight:</strong> 32.00 g/mol</p>
+    <p>Oxygen is essential for life, making up about 21% of Earth's atmosphere. It supports respiration, combustion, and industrial processes like welding and steelmaking.</p>
+    <img src="oxygen.jpg" alt="Oxygen in nature">
     <div class="interactive">
       <button onclick="openQuiz('oxygen')">Test Your Knowledge on Oxygen</button>
     </div>
@@ -37,7 +40,9 @@
 
   <section id="nitrogen" class="gas-section">
     <h2>Nitrogen (N₂)</h2>
-    <p>Nitrogen is the most abundant gas in Earth's atmosphere, making up around 78% of it.</p>
+    <p><strong>Atomic Number:</strong> 7 | <strong>Symbol:</strong> N | <strong>Type:</strong> Non-metal | <strong>Molecular Weight:</strong> 28.02 g/mol</p>
+    <p>Nitrogen makes up 78% of Earth's atmosphere and is essential for fertilizers, food preservation, and creating inert environments for industrial use.</p>
+    <img src="nitrogen.jpg" alt="Nitrogen applications">
     <div class="interactive">
       <button onclick="openQuiz('nitrogen')">Test Your Knowledge on Nitrogen</button>
     </div>
@@ -45,7 +50,9 @@
 
   <section id="argon" class="gas-section">
     <h2>Argon (Ar)</h2>
-    <p>Argon is a noble gas, and it is colorless, odorless, and inert.</p>
+    <p><strong>Atomic Number:</strong> 18 | <strong>Symbol:</strong> Ar | <strong>Type:</strong> Noble Gas | <strong>Molecular Weight:</strong> 39.95 g/mol</p>
+    <p>Argon is an inert gas used in welding, lighting, and insulation applications due to its non-reactive nature.</p>
+    <img src="argon.jpg" alt="Argon welding">
     <div class="interactive">
       <button onclick="openQuiz('argon')">Test Your Knowledge on Argon</button>
     </div>
@@ -53,7 +60,8 @@
 
   <section id="carbon-dioxide" class="gas-section">
     <h2>Carbon Dioxide (CO₂)</h2>
-    <p>Carbon dioxide is a greenhouse gas and is vital in the process of photosynthesis in plants.</p>
+    <p>Carbon dioxide plays a crucial role in photosynthesis and is widely used in industries for carbonation, fire extinguishers, and chemical manufacturing.</p>
+    <img src="co2.jpg" alt="Carbon dioxide emissions">
     <div class="interactive">
       <button onclick="openQuiz('co2')">Test Your Knowledge on Carbon Dioxide</button>
     </div>
