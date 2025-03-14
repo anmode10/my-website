@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Gases Knowledge</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
   <header>
@@ -23,46 +24,54 @@
   <section id="home">
     <h2>Welcome to the World of Gases!</h2>
     <p>Explore the fascinating properties and uses of different gases like Oxygen, Nitrogen, Argon, and Carbon Dioxide.</p>
+    <canvas id="earthCanvas"></canvas>
   </section>
 
-  <section id="oxygen">
+  <section id="oxygen" class="gas-section">
     <h2>Oxygen (O₂)</h2>
     <p>Oxygen is essential for life. It makes up about 21% of Earth's atmosphere.</p>
     <div class="interactive">
-      <button id="oxygen-quiz">Test Your Knowledge on Oxygen</button>
-      <p id="oxygen-answer"></p>
+      <button onclick="openQuiz('oxygen')">Test Your Knowledge on Oxygen</button>
     </div>
   </section>
 
-  <section id="nitrogen">
+  <section id="nitrogen" class="gas-section">
     <h2>Nitrogen (N₂)</h2>
     <p>Nitrogen is the most abundant gas in Earth's atmosphere, making up around 78% of it.</p>
     <div class="interactive">
-      <button id="nitrogen-quiz">Test Your Knowledge on Nitrogen</button>
-      <p id="nitrogen-answer"></p>
+      <button onclick="openQuiz('nitrogen')">Test Your Knowledge on Nitrogen</button>
     </div>
   </section>
 
-  <section id="argon">
+  <section id="argon" class="gas-section">
     <h2>Argon (Ar)</h2>
     <p>Argon is a noble gas, and it is colorless, odorless, and inert.</p>
     <div class="interactive">
-      <button id="argon-quiz">Test Your Knowledge on Argon</button>
-      <p id="argon-answer"></p>
+      <button onclick="openQuiz('argon')">Test Your Knowledge on Argon</button>
     </div>
   </section>
 
-  <section id="carbon-dioxide">
+  <section id="carbon-dioxide" class="gas-section">
     <h2>Carbon Dioxide (CO₂)</h2>
     <p>Carbon dioxide is a greenhouse gas and is vital in the process of photosynthesis in plants.</p>
     <div class="interactive">
-      <button id="co2-quiz">Test Your Knowledge on Carbon Dioxide</button>
-      <p id="co2-answer"></p>
+      <button onclick="openQuiz('co2')">Test Your Knowledge on Carbon Dioxide</button>
     </div>
   </section>
 
+  <div id="quiz-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeQuiz()">&times;</span>
+      <h2 id="quiz-title"></h2>
+      <p id="quiz-question"></p>
+      <div id="quiz-options"></div>
+      <p id="quiz-feedback"></p>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2025 Interactive Gases Knowledge. All rights reserved.</p>
+    <p class="quote">“The best way to predict the future is to create it.” – <strong>ANMOL SHARMA</strong></p>
   </footer>
 
   <script src="script.js"></script>
